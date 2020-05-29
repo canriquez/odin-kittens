@@ -1,0 +1,22 @@
+
+
+<div class="d-flex align-items-center flex-column">
+  <div class="card" style="width: 25rem;">
+    <div class="card-body">
+      <h5 class="card-title text-center">Create New Kitten Record</h5>
+
+        <%= simple_form_for  @kitten do |f| %>
+            <%= f.input :name, label: "Kitten Name"%>
+            <%= f.input :age, label: "Age"%>
+            <%= f.input :cuteness, label: "Cuteness" %> 
+            <%= f.input :softness, label: "softness" %>
+
+            <div class="menu-low d-flex justify-content-between">
+              <%= f.submit 'Save Kitten', class: 'btn btn-primary', data: { "disable-with": "Saving..." } %>
+              <%= link_to 'Cancell-Back to main page', root_path, class: "btn btn-light" %>
+            </div>
+        <% end %>
+
+    </div>
+  </div>
+</div>

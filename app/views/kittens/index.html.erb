@@ -1,0 +1,18 @@
+<%= link_to 'Add new Kitten', new_kitten_path, class: 'btn btn-primary' %>
+
+<%= @kittens.each do |kitten|%>
+
+    <div class="card" style="width: 18rem;">
+    <div class="card-header">
+        <%= link_to kitten.name, kitten_path(kitten) %>
+    </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Age: <%= kitten.age %></li>
+            <li class="list-group-item">Cuteness: <%= kitten.cuteness %></li>
+            <li class="list-group-item">Softness:   <%= kitten.softness %></li>
+            <%= link_to 'edit kitten', edit_kitten_path(kitten), class:  "icon-btn btn" %> | 
+            <%= link_to 'Delete kitten', kitten_path(kitten), method: :delete, class:  "icon-btn btn" %> 
+        </ul>
+    </div>
+
+<% end %>
